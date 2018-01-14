@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <CopyFrom>
+    <FormDialog Header="Copy Item From"  Text="Navigate to the location and select item you want to copy as a child item" OKButton="Copy Selected Item">
+      <CodeBeside Type="Sitecore.Foundation.CopyFrom.Dailogs.CopySelectorForm,Sitecore.Foundation.CopyFrom"/>
+      <DataContext ID="DataContext" Root="/"/>
+      <Tabstrip ID="Tabs" Width="100%" Height="100%">
+        <Tab ID="TreeTab" Header="Browse" Height="100%">
+          <Scrollbox style="height: calc(100% - 100px); margin-bottom: 10px;">
+            <TreeviewEx ID="Treeview" DataContext="DataContext" Click="SelectTreeNode" ContextMenu='Treeview.GetContextMenu("contextmenu")' />
+          </Scrollbox>
+          <GridPanel class="scFormTable" Columns="1">
+            <Literal ID="CopyFromItemPath" />
+            <Literal ID="CopyToItemPath" />
+          </GridPanel>
+        </Tab>
+        <SearchTab Mode="FieldResults" Header="Search" Height="100%"/>
+      </Tabstrip>
+
+    </FormDialog>
+  </CopyFrom>
+</control>
+
+
